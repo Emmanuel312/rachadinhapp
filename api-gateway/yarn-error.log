@@ -1,0 +1,52 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js install
+
+PATH: 
+  /home/emmanuel/anaconda3/bin:/home/emmanuel/anaconda3/condabin:/home/emmanuel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/emmanuel/Android/Sdk/emulator:/home/emmanuel/Android/Sdk/tools:/home/emmanuel/Android/Sdk/tools/bin:/home/emmanuel/Android/Sdk/platform-tools:/home/emmanuel/Android/Sdk/emulator:/home/emmanuel/Android/Sdk/tools:/home/emmanuel/Android/Sdk/tools/bin:/home/emmanuel/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.15.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/emmanuel/www/node/ecommerce-microservice/rachadinhapp/api-gateway/package.json: Unexpected token } in JSON at position 517
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:310:30)
+      at /usr/share/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "api-gateway",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "eslint": "^6.8.0",
+      "eslint-config-airbnb-base": "^14.0.0",
+      "eslint-config-prettier": "^6.10.0",
+      "eslint-plugin-import": "^2.20.1",
+      "eslint-plugin-prettier": "^3.1.2",
+      "nodemon": "^2.0.2",
+      "prettier": "^1.19.1",
+      "sucrase": "^3.12.1"
+    },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
