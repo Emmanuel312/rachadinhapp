@@ -1,0 +1,49 @@
+version: '3'
+services: 
+  api-gateway:
+      container_name: apiGateway
+      build: ./api-gateway
+      ports:
+        - "3000:3000"
+      volumes:
+        - .:/home/node/app
+        - ./home/node/app/node_modules
+      networks:
+        - api-network
+  auth-microservice:
+      container_name: authMicroservice
+      build: ./auth-microservice
+      ports:
+        - "3001:3001"
+      volumes:
+        - .:/home/node/app
+        - ./home/node/app/node_modules
+      depends_on: 
+        - rachadinhappMongo
+      networks:
+        - api-network
+  vacancy-microservice:
+      container_name: vacancyMicroservice
+      build: ./vacancy-microservice
+      ports:
+        - "3002:3002"
+      volumes:
+        - .:/home/node/app
+        - ./home/node/app/node_modules
+      depends_on: 
+        - rachadinhappMongo
+      networks:
+        - api-network
+  rachadinhappMongo:
+    image: mongo
+    container_name: rachadinhappMongo
+    volumes:
+      - dbdata:/data/db
+    networks:
+      - api-network
+volumes:   
+      dbdata:
+        external: true
+networks:
+  api-network:
+    driver: bridge   
