@@ -6,8 +6,7 @@ services:
       ports:
         - "3000:3000"
       volumes:
-        - .:/home/node/app
-        - ./home/node/app/node_modules
+        - ./api-gateway:/usr/app
       networks:
         - api-network
   auth-microservice:
@@ -16,8 +15,7 @@ services:
       ports:
         - "3001:3001"
       volumes:
-        - .:/home/node/app
-        - ./home/node/app/node_modules
+        - ./auth-microservice:/usr/app
       depends_on: 
         - rachadinhappMongo
       networks:
@@ -28,14 +26,15 @@ services:
       ports:
         - "3002:3002"
       volumes:
-        - .:/home/node/app
-        - ./home/node/app/node_modules
+        - ./vacancy-microservice:/usr/app
       depends_on: 
         - rachadinhappMongo
       networks:
         - api-network
   rachadinhappMongo:
     image: mongo
+    ports: 
+      - "27017:27017"
     container_name: rachadinhappMongo
     volumes:
       - dbdata:/data/db

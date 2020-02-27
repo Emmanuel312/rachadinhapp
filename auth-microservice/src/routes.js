@@ -10,6 +10,7 @@ class Routes {
   routes() {
     this.router.post('/signup', AuthController.signUp);
     this.router.post('/signin', AuthController.signIn);
+    
   }
 }
 
